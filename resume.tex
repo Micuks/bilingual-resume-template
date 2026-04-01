@@ -1,0 +1,154 @@
+\documentclass{resume}
+
+% ============================================================================
+% Bilingual Resume Template (EN/ZH)
+%
+% Build:
+%   make en    -> resume-en.pdf (English)
+%   make zh    -> resume-zh.pdf (Chinese)
+%   make all   -> both
+%
+% How it works:
+%   \en{...} renders only in English mode
+%   \zh{...} renders only in Chinese mode
+%   Content outside \en{}/\zh{} renders in both modes
+% ============================================================================
+
+\ifdefined\resumezh
+  \newcommand{\en}[1]{}
+  \newcommand{\zh}[1]{#1}
+\else
+  \newcommand{\en}[1]{#1}
+  \newcommand{\zh}[1]{}
+\fi
+
+\zh{
+  \usepackage{xeCJK}
+  \usepackage{ifplatform}
+  \ifwindows
+    \setCJKmainfont{SimSun}
+    \setCJKsansfont{SimSun}
+    \setCJKmonofont{SimSun}
+  \else
+    \ifmacosx
+      \setCJKmainfont{Songti SC}
+      \setCJKsansfont{Songti SC}
+      \setCJKmonofont{Songti SC}
+    \else
+      \setCJKmainfont{Noto Serif CJK SC}
+      \setCJKsansfont{Noto Sans CJK SC}
+      \setCJKmonofont{Noto Sans CJK SC}
+    \fi
+  \fi
+}
+
+\begin{document}
+
+% ── Header ──────────────────────────────────────────────────────────────────
+\noindent
+\begin{minipage}[t]{0.74\textwidth}
+  {\Huge\scshape \en{Your Name}\zh{你的姓名}\par}
+  \vspace{1.25ex}
+  {\ttfamily\large
+    \phone{13800138000} \textperiodcentered\
+    \email{yourname@example.com} \textperiodcentered\
+    \github[your-github-id]{https://github.com/your-github-id}\par
+  }
+\end{minipage}\hfill
+\begin{minipage}[t]{0.24\textwidth}
+  \raggedleft
+  % Replace with your own photo, or remove this block entirely
+  % \includegraphics[width=2.6cm,clip]{photo.png}
+\end{minipage}
+\vspace{0.2ex}
+
+% ── Education ───────────────────────────────────────────────────────────────
+\section{\en{Education}\zh{教育经历}}
+
+\en{\datedsubsection{\textbf{Your University}, Master of Science}{09/2024 -- 06/2027}}
+\zh{\datedsubsection{\textbf{XX大学}, 硕士研究生}{2024/09 -- 2027/06}}
+\begin{itemize}[parsep=0.25ex]
+	\en{\item Major in Computer Science; awarded the \textbf{National Scholarship (20XX-20XX)}.}
+	\zh{\item 计算机科学与技术（学硕），获得\textbf{20XX-20XX年度国家奖学金}}
+	\en{\item Research area: your research direction, under the supervision of Prof. XXX.}
+	\zh{\item 在XX实验室XX老师指导下参与XX方向的科研与实践}
+\end{itemize}
+
+\en{\datedsubsection{\textbf{Your University}, Bachelor of Engineering}{09/2020 -- 06/2024}}
+\zh{\datedsubsection{\textbf{XX大学}, 工学学士}{2020/09 -- 2024/06}}
+\begin{itemize}[parsep=0.25ex]
+	\en{\item Major in Computer Science, GPA: X.XX/4.0, rank: XX/XXX (top X\%).}
+	\zh{\item 计算机科学与技术，综合成绩 XX.XX，排名 XX/XXX (X\%)。}
+\end{itemize}
+
+% ── Projects ────────────────────────────────────────────────────────────────
+\section{\en{Projects}\zh{项目经历}}
+
+\role{\en{Project Name --- Brief Description\textnormal{\normalfont\itshape{ | Tech Stack / Keywords}}}\zh{项目名称 --- 简要描述\textnormal{\normalfont\itshape{ | 技术栈 / 关键词}}}}{2026.01 -- 2026.03}
+\begin{itemize}[parsep=0.25ex]
+	\en{\item Motivation and what you built: describe the problem and your end-to-end solution in one sentence.}
+	\zh{\item 面向XX场景，构建XX系统/流水线，覆盖XX、XX及XX。}
+	\en{\item Key result: quantify improvements (e.g., metric A improved from X\% to Y\%).}
+	\zh{\item 关键成果：XX指标从 X\% 提升至 Y\%。}
+	\en{\item Tooling / observability: any monitoring, CI/CD, or infrastructure highlights.}
+	\zh{\item 工具链/可观测性：基于XX实现XX监控与追踪。}
+\end{itemize}
+
+\role{\en{Another Project\textnormal{\normalfont\itshape{ | Tech Stack}}}\zh{另一个项目\textnormal{\normalfont\itshape{ | 技术栈}}}}{2025.09 -- 2025.12}
+\begin{itemize}[parsep=0.25ex]
+	\en{\item Problem statement: what challenge did you address?}
+	\zh{\item 问题描述：针对XX中的XX问题，实现XX方案。}
+	\en{\item Key metrics: improved throughput by X\%, reduced latency by Y\%.}
+	\zh{\item 关键指标：吞吐提升 X\%，延迟降低 Y\%。}
+\end{itemize}
+
+% ── Internship Experience ───────────────────────────────────────────────────
+\section{\en{Internship Experience}\zh{实习经历}}
+
+\en{\role{Project / Team Focus}{Company Name, Department | Role Title}}
+\zh{\role{项目/团队方向}{公司名称·部门 | 职位}}
+\begin{itemize}[parsep=0.25ex]
+	\en{\item Context: describe the business or technical problem you were solving.}
+	\zh{\item 背景：描述你解决的业务或技术问题。}
+	\en{\item What you did: designed / implemented / optimized XXX.}
+	\zh{\item 工作内容：设计/实现/优化了XXX。}
+	\en{\item Impact: quantify results (e.g., throughput +30\%, overhead -15\%).}
+	\zh{\item 成果：量化结果（如吞吐提升30\%，开销降低15\%）。}
+\end{itemize}
+
+% ── Research Experience ─────────────────────────────────────────────────────
+\section{\en{Research Experience}\zh{科研经历}}
+
+\role{Paper Title or Research Topic}{Venue / Year}
+\begin{itemize}[parsep=0.25ex]
+	\en{\item \textit{Contribution 1:} describe your first main contribution.}
+	\zh{\item \textit{贡献一：}描述你的第一项主要贡献。}
+	\en{\item \textit{Contribution 2:} describe your second main contribution.}
+	\zh{\item \textit{贡献二：}描述你的第二项主要贡献。}
+	\en{\item \textit{Validation:} how did you evaluate the work?}
+	\zh{\item \textit{验证：}如何评估该工作？}
+\end{itemize}
+
+% ── Competitions ────────────────────────────────────────────────────────────
+\section{\en{Competitions}\zh{比赛经历}}
+
+\en{\role{Competition Name (Track / Category)}{Award Level}}
+\zh{\role{比赛名称（赛道/类别）}{奖项级别}}
+\begin{itemize}[parsep=0.25ex]
+	\en{\item Describe what you implemented and the technical approach.}
+	\zh{\item 描述你实现的方案与技术路线。}
+	\en{\item Highlight any notable techniques or results.}
+	\zh{\item 突出关键技术点或成果。}
+\end{itemize}
+
+% ── Skills ──────────────────────────────────────────────────────────────────
+\enlargethispage{3\baselineskip}
+\section{\en{Skills}\zh{技能}}
+\en{\textbf{Languages}: Language A/B (proficient); Language C/D/E (familiar)\\
+\textbf{Tools}: Tool 1, Tool 2, Tool 3, Framework 1, Framework 2\\
+\textbf{English}: IELTS X.X / TOEFL XXX / CET-6 XXX}
+\zh{\textbf{编程语言}: A/B（熟练）；C/D/E（了解）\\
+\textbf{工具}: 工具1, 工具2, 工具3, 框架1, 框架2\\
+\textbf{英语}: 雅思 X.X / 托福 XXX / 六级 XXX}
+
+\end{document}

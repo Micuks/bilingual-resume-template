@@ -1,0 +1,26 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.idx
+*.ilg
+*.ind
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.xdv
+*.cut
+
+# PDF output (uncomment if you want to track PDFs)
+# *.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor config
+.vscode/
