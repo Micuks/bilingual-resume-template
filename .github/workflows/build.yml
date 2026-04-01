@@ -15,7 +15,7 @@ jobs:
       - name: Install TeX Live and CJK fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra fonts-noto-cjk latexmk
+          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-lang-chinese fonts-noto-cjk latexmk
 
       - name: Build English PDF
         run: make en
