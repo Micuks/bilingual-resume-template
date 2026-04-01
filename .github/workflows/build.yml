@@ -1,0 +1,32 @@
+name: Build Resume PDFs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install TeX Live and CJK fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra fonts-noto-cjk latexmk
+
+      - name: Build English PDF
+        run: make en
+
+      - name: Build Chinese PDF
+        run: make zh
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdfs
+          path: |
+            resume-en.pdf
+            resume-zh.pdf
