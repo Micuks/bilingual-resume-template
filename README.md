@@ -9,6 +9,7 @@
 - **FontAwesome 图标** — 电话、邮箱、GitHub、LinkedIn、个人主页
 - **XeTeX + CJK** — 自动适配 Windows / macOS / Linux 中文字体
 - **简单构建** — `make en` / `make zh` / `make all`
+- **GitHub Actions** — 推送即自动构建，生成的 PDF 可在 Actions artifacts 中下载
 
 ## 快速开始
 
@@ -69,6 +70,7 @@ A clean, one-page LaTeX resume template with built-in bilingual support (English
 - **FontAwesome icons** — phone, email, GitHub, LinkedIn, homepage
 - **XeTeX + CJK support** — automatic CJK font selection across Windows, macOS, and Linux
 - **Simple build system** — `make en` / `make zh` / `make all`
+- **GitHub Actions** — auto-builds on push; download generated PDFs from Actions artifacts
 
 ## Quick Start
 
